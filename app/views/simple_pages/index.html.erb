@@ -1,2 +1,37 @@
-<h1>Welcome to my first Ruby app!</h1>
-<p>I hope to update this page soon!</p>
+<!-- Carousel starts here -->
+<div class="container-fluid">
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <%= image_tag("bike.jpg", class: "img-responsive", alt: "bike with blue background") %>
+      </div> <!-- end item -->
+
+      <div class="item">
+        <%= image_tag("bike2.jpg", class: "img-responsive", alt: "bike with red background") %>
+      </div> <!-- end item -->
+
+      <div class="item">
+        <%= image_tag("bike3.jpg", class: "img-responsive", alt: "bike with yellow background") %>
+      </div> <!-- end item -->
+    </div> <!-- end carousel-inner -->
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div> <!-- end carousel-slide -->
+</div> <!-- /container-fluid -->
+<!-- Carousel ends here -->
