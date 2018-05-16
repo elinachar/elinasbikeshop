@@ -29,9 +29,10 @@
 <div class="container">
   <div class="row">
     <% @products.each do |product| %>
-      <div class="col-sm-12 col-md-4 product-bike">
+      <div class="col-sm-12 col-md-4 product-card">
           <%= image_tag( product.image_url , class: " img-responsive img-index", alt: "wooden bike") %>
           <p><%= product.name %></p>
+          <p><strong>Price: &euro;<%='%.2f' % product.price %></strong></p>
           <%= link_to 'Show', product %>
           <%= link_to 'Edit', edit_product_path(product) %>
           <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>

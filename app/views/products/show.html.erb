@@ -2,13 +2,15 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 col-md-8">
-      <%= image_tag( @product.image_url , class: " img-responsive img-show", alt: "wooden bike") %>
+    <div class="col-sm-12 col-md-8 product">
+      <%= image_tag( @product.image_url , class: "img-responsive img-show", alt: "wooden bike") %>
     </div>
 
     <div class="col-sm-12 col-md-4">
         <h2><strong><%= @product.name %></strong></h2>
         <p><%= @product.description %></p>
+        <p>Color: <%= @product.colour%></p>
+        <p><strong>Price: &euro;<%='%.2f' % @product.price%></strong></p>
     </div>
   </div> <!-- end row -->
 </div> <!-- end container -->
