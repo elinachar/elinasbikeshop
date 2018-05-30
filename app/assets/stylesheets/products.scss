@@ -3,13 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .product-card {
-  border-style: solid;
-  border-width: 1px;
-  margin: 10px;
-  padding-top: 5px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .img-show {
   width: 100%;
   height: auto;
+}
+
+.product-card:hover {
+  // cursor: pointer;
+  box-shadow: 0 0 15px #888888;
 }
