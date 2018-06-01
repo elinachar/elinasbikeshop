@@ -1,7 +1,48 @@
-<h1>Contact</h1>
-<p>If you have any queries please contact me!</p>
-<h2 class="typo-kalam">Elina Charalampous</h2>
-<p><span class="glyphicon glyphicon-map-marker"></span><adress>Sourgiadaki 8-10, 71306 Heraklion, Crete, Greece</p>
-<p><span class="glyphicon glyphicon-phone"></span> +30 694 8510515</p>
-<p><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:elinachar@gmail.com">elinachar@gmail.com</a></p>
-</adress>
+<div class="container-fluid contact">
+  <h1>Contact</h1>
+  <p>If you have any queries please contact us!</p>
+  <h2 class="typo-kalam" style="text-align:left">Elina's Bike Shop</h2>
+  <p><span class="glyphicon glyphicon-map-marker"></span><adress>Sourgiadaki 8-10, 71306 Heraklion, Crete, Greece</p>
+  <p><span class="glyphicon glyphicon-phone"></span> +30 694 8510515</p>
+  <p><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:elinachar@gmail.com">elinachar@gmail.com</a></p>
+  </adress>
+
+  <form class="col-xs-12 col-sm-8" action="https://formspree.io/elinachar@gmail.com"
+  method="POST">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group hidden-after-submit">
+            <label for="form-name" title="This field is required" id="form-name-label">Your Name *</label>
+            <input type="text" placeholder="Enter your name here" required="required" id="form-name" class="form-control" name="name">
+          </div> <!-- end form-group -->
+        </div> <!-- end name -->
+
+        <div class="col-sm-6">
+          <div class="form-group hidden-after-submit">
+            <label for="form-phone">Your Phone Number </label>
+            <input type="tel" pattern="^[0-9\-\+\s\(\)]*$" title="Only numbers [0-9] and the following symbols are allowed: - + &blank; ( )." placeholder="Your phone number" id="form-phone" class="form-control" name="phone">
+          </div> <!-- end form-group -->
+        </div> <!-- end phone -->
+      </div> <!-- end row -->
+
+      <div class="form-group hidden-after-submit">
+        <label for="form-email" title="This field is required" id="form-email-label">Your e-mail address *</label>
+        <input type="email"  placeholder="Enter your e-mail here" required="required" id="form-email" class="form-control" name="form-email" >
+      </div> <!-- end form-group -->
+
+      <div class="form-group">
+        <label class="hidden-after-submit" for="form-message" title="This field is required" id="message-box-label">Your message to me *<span id="message-box-error-label" style="align:left"><span></label>
+        <textarea class="message-box form-control hidden-after-submit" placeholder="Type your message here"  required="required" style="resize:none" cols="40" rows="5" id="form-message" name="message"></textarea>
+        <p id="char-count" class="hidden-after-submit"></p>
+        <p id="visible-comment"></p>
+      </div> <!-- end form-group -->
+
+      <div class="form-group">
+        <label for="form-submit-button" class="sr-only">Submit Button</label>
+        <button type="submit" class="btn btn-default hidden-after-submit" id="form-submit-button">Submit</button>
+      </div> <!-- end form-group -->
+
+    </form>
+
+  </div> <!-- end row -->
+</div> <!-- end container -->

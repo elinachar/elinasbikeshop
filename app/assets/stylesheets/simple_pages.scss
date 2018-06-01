@@ -14,3 +14,19 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
+.contact {
+  background-image: image-url("contact-bkg.jpg");
+  /* No repeat of background img */
+  /* background-repeat: no-repeat; */
+  /*Add a background image*/
+  background-attachment: fixed;
+  /*Give the background a fixed position does it not scroll when you scroll*/
+  background-size: cover;
+  /*Have the background cover the entire div section*/
+  color: white;
+  /*Change the color of the text on top so it is readable and adjust the padding as needed.*/
+  padding: 5%;
+  padding-top: 0;
+  overflow: auto;
+ }
