@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>Order Details</h2>
+  <p>Thank you for your order! Check out the details below.</p>
+  <hr>
+  <p><strong>Order ID: </strong><%= @order.id %></p>
+  <p><strong>Product Name: </strong><%= @order.product.name %></p>
+  <p><strong>Product Price: </strong><%= number_to_currency(@order.total.to_f, :unit=>'€ ') %></p>
+  <p><strong>Total Price: </strong><%= number_to_currency(@order.total.to_f, :unit=>'€ ') %></p>
+</div>

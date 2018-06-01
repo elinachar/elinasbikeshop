@@ -1,14 +1,19 @@
 <% if product.name and product.image_url %>
   <div class="col-xs-12 col-sm-6 col-md-4">
-    <div class="product-card">
-      <%= image_tag( product.image_url , class: " img-responsive img-index", alt: product.name) %>
-      <p><%= product.name %></p>
-      <% if product.price %>
-      <p><strong>&euro;<%='%.2f' % product.price %></strong></p>
-      <% end %>
-      <%= link_to 'Show', product %>
-      <%= link_to 'Edit', edit_product_path(product) %>
-      <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div> <!-- end product-card -->
+    <%= link_to product, :action => 'go' do %>
+      <div class="product-card">
+        <%= image_tag( product.image_url , class: "img-responsive", alt: product.name) %>
+        <div class="product-info-index">
+          <p><%= product.name %></p>
+          <% if product.price %>
+            <p><strong>&euro;<%='%.2f' % product.price %></strong></p>
+          <% end %>
+        </div> <!-- end product-info-index -->
+        <div class ="product-links-index">
+          <%= link_to '<i class="fa fa-edit" data-aos="fade" data-aos-delay="300" data-aos-offset="0"></i>'.html_safe, edit_product_path(product) %>
+          <%= link_to '<i class="fa fa-trash-o" data-aos="fade" data-aos-delay="300" data-aos-offset="0"></i>'.html_safe, product, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div> <!-- end product-links-index -->
+      </div> <!-- end product-card -->
+    <% end %>
   </div>
 <% end %>

@@ -30,6 +30,10 @@
     text-align: center;
   }
 
+  a:-webkit-any-link {
+    text-decoration: none; /* apply text-decoration:none to all links of the app (it does not work when applied on other styles) */
+}
+
   .anchor {
     padding-top: 50px;
     min-height: 100%; /* for the sticky footer */
