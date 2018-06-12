@@ -13,46 +13,47 @@
  *= require_tree .
  *= require_self
  */
- /**** All pages ****/
-  * { box-sizing: border-box; }
 
-  body {
-    margin: 0;
-  }
+* { box-sizing: border-box; }
 
-  html, body {
-    height: 100%; /* for the sticky footer */
-  }
-
-
-  h1, h2, .navbar-left {
-    font-family: "Comic Sans MS", "Georgia";
-    text-align: center;
-  }
-
-  a:-webkit-any-link {
-    text-decoration: none; /* apply text-decoration:none to all links of the app (it does not work when applied on other styles) */
+body {
+  margin: 0;
 }
 
-  .anchor {
-    padding-top: 50px;
-    min-height: 100%; /* for the sticky footer */
-    margin-bottom: -3em; /* for the sticky footer */
-  }
+html, body {
+  height: 100%; /* for the sticky footer */
+}
 
-  .anchor:after {
-    content: ""; /* for the sticky footer */
-    display: block; /* for the sticky footer */
-  }
 
-  footer, .anchor:after {
-    height: 3em;
-  }
+h1, h2, .navbar-left {
+  font-family: "Comic Sans MS", "Georgia";
+  text-align: center;
+}
 
-  footer {
-    background-color: #F8F8F8;
-    color: #777;
-    border-top-style: solid;
-    border-color: #e7e7e7;
-    border-top-width: 1px;
-  }
+/* apply text-decoration:none to all links of the app (it does not work when applied on other styles) */
+a:-webkit-any-link {
+    text-decoration: none;
+}
+
+.anchor {
+  padding-top: 50px;
+  min-height: 100%; /* for the sticky footer */
+  margin-bottom: -3em; /* for the sticky footer */
+}
+
+.anchor:after {
+  content: ""; /* for the sticky footer */
+  display: block; /* for the sticky footer */
+}
+
+footer, .anchor:after {
+  height: 3em;
+}
+
+footer {
+  background-color: #F8F8F8;
+  color: #777;
+  border-top-style: solid;
+  border-color: #e7e7e7;
+  border-top-width: 1px;
+}
