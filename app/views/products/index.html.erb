@@ -2,6 +2,10 @@
 
 <h1>Products</h1>
 
+<div class="row btn-new-product">
+  <%= link_to '<span class="glyphicon glyphicon-plus-sign"></span> Add New Product'.html_safe, new_product_path, class: 'btn btn-default col-xs-12 col-md-3 col-md-offset-9' %>
+</div><!-- end row -->
+
 <div class="container">
   <div class="row">
     <%= render @products %>
@@ -10,5 +14,3 @@
 
 
 <br>
-
-<%= link_to 'New Product', new_product_path %>

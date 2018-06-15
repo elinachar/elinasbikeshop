@@ -14,10 +14,10 @@
         <p><strong>Price: &euro;<%='%.2f' % @product.price%></strong></p>
         <% end %>
 
+        <div class="show-products-links">
+          <%= link_to '<i class="fa fa-edit"></i> Edit'.html_safe, edit_product_path(@product), class: 'btn btn-default' %>
+          <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Go Back to Products'.html_safe, products_path, class: 'btn btn-default' %>
+        </div>
     </div>
   </div> <!-- end row -->
 </div> <!-- end container -->
-
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>

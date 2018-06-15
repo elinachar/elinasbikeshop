@@ -10,8 +10,8 @@
           <% end %>
         </div> <!-- end product-info-index -->
         <div class ="product-links-index">
-          <%= link_to '<i class="fa fa-edit" data-aos="fade" data-aos-delay="300" data-aos-offset="0"></i>'.html_safe, edit_product_path(product) %>
-          <%= link_to '<i class="fa fa-trash-o" data-aos="fade" data-aos-delay="300" data-aos-offset="0"></i>'.html_safe, product, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_product_path(product) %>
+          <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, product, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div> <!-- end product-links-index -->
       </div> <!-- end product-card -->
     <% end %>
