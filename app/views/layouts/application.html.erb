@@ -40,16 +40,14 @@
              <li><%= link_to "Products", products_path %></li>
              <li><%= link_to "Orders", orders_path %></li>
            </ul>
-           <form class="navbar-form navbar-right">
-             <div class="form-group">
-               <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+
+           <%= form_with(url: products_path, method: 'get', local: true, class: 'navbar-form navbar-right') do |form| %>
                 <%= form.text_field :q, id: 'q', value: params[:q], placeholder: "Search", class: 'form-control' %>
-                <!-- <%= form.submit raw('<span class="glyphicon glyphicon-search"></span>'), class: 'btn btn-default' %> -->
-                <!-- <%= form.submit '<span class="glyphicon glyphicon-search"></span>'.html_safe, class: 'btn btn-default' %> -->
-                <%= form.submit 'Submit', class: 'btn btn-default' %>
-               <% end %>
-             </div>
-           </form>
+                <%= button_tag(class: 'btn btn-default search-btn') do %>
+                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                <% end %>
+           <% end %>
+
          </div> <!-- end navbar-collapse -->
        </div> <!-- end container navbar -->
      </nav> <!-- end navbar-->

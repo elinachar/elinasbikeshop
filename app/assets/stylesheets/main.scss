@@ -20,6 +20,15 @@ a:-webkit-any-link {
     text-decoration: none;
 }
 
+.search-btn {
+  border-radius: 50%;
+}
+
+.search-btn:focus,
+.search-btn:active {
+  outline: none !important;
+}
+
 .anchor {
   padding-top: 50px;
   min-height: 100%; /* for the sticky footer */

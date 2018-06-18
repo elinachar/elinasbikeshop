@@ -3,9 +3,9 @@ class Product < ApplicationRecord
 
     def self.search(search_term)
       if Rails.env.development?
-        where("name LIKE ?", "%#{search_term}%")
+        Product.where("name LIKE ?", "%#{search_term}%")
       elsif Rails.env.production?
-        where("name ILIKE ?", "%#{search_term}%")
+        Product.where("name ILIKE ?", "%#{search_term}%")
       end
     end
 end
