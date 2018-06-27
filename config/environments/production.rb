@@ -94,4 +94,5 @@ Rails.application.configure do
 
   # Dynamic links generate right URLs in emails (after installing devise gem)
   config.action_mailer.default_url_options = { host: 'elinasbikeshop.herokuapp.com' }
+
 end
