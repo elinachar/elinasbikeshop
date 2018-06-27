@@ -93,5 +93,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Dynamic links generate right URLs in emails (after installing devise gem)
-  config.action_mailer.default_url_options = { host: ‘elinasbikeshop.herokuapp.com’ }
+  config.action_mailer.default_url_options = { host: 'elinasbikeshop.herokuapp.com' }
 end
