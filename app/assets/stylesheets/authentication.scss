@@ -1,11 +1,49 @@
 .authentication-card {
+  clear: both;
   text-align: center;
   border-style: solid;
   border-width: thin;
   border-color: #e7e7e7;
   background-color: #F8F8F8;
   width:80%;
+  padding-bottom: 20px;
 }
+
+.authentication-tab {
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.authentication-tab-button {
+  font-family: "Comic Sans MS", "Georgia";
+  font-size: 30px;
+  color: black !important;
+  display: inline-block;
+  height: 70px;
+  text-align: center;
+  width: 50%;
+  float:left;
+  padding-top: 10px;
+}
+
+.authentication-tab .active {
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+
+.authentication-tab .not-active {
+  border-bottom: 1px solid #ccc;
+}
+
+
+.authentication-link {
+  color: black;
+}
+
+.authentication-link:hover {
+  color: black;
+}
+
 
 .authentication-card h2 {
   padding-bottom: 30px;

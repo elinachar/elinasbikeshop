@@ -1,11 +1,20 @@
 <div class="container authentication-card">
+  <div class="authentication-tab">
+    <div class="authentication-tab-button active">
+      <%= link_to "New customer?", new_registration_path(resource_name), class:"authentication-link" %>
+    </div>
+    <div class="authentication-tab-button not-active">
+      <%= link_to "Already registered?", new_session_path(resource_name), class:"authentication-link" %>
+    </div>
+  </div>
+
   <h2>Sign up</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
     <div class="field">
-      <%= f.label :email %>
+      <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div><br />
 
@@ -18,14 +27,13 @@
     </div><br />
 
     <div class="field">
-      <%= f.label :password_confirmation %>
+      <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    </div>
+    </div><br />
 
     <div class="actions">
       <%= f.submit "Sign up", class: "btn btn-default" %>
     </div>
   <% end %>
 
-  <%= render "devise/shared/links" %>
 </div>
