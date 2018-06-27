@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
 
   def index
-    @orders = Order.includes(:product).all # Optimize query to call once the orders and the products, much faster 
+    @orders = Order.includes(:product).all # Optimize query to call once the orders and the products, much faster
   end
 
   def show

@@ -61,3 +61,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "rename"
+
+# Gem for user authentication (at bottom of gem file)
+gem 'devise'
