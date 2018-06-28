@@ -64,17 +64,26 @@
     </nav> <!-- end navbar-->
     <!-- navbar ends here -->
 
+
     <!-- main body here -->
     <div class="anchor">
-     <%= yield %>
+      <!-- flash messages -->
+      <div class="container">
+        <% if notice %>
+          <p id="notice" class="alert alert-info", role="alert"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p id="alert" class="alert alert-danger", role="alert"><%= alert %></p>
+        <% end %>
+      </div>
+
+      <div class="main-body">
+        <%= yield %>
+      </div>
     </div>
 
-    <!-- flash messages -->
-    <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </div>
-    
+
+
     <!-- footer starts here -->
     <footer>
       <div class="container-fluid">

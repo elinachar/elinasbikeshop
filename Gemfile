@@ -64,3 +64,6 @@ gem "rename"
 
 # Gem for user authentication (at bottom of gem file)
 gem 'devise'
+
+# Gem for user authorization (https://github.com/CanCanCommunity/cancancan)
+gem 'cancancan', '~> 2.0'
