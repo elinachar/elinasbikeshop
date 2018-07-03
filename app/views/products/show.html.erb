@@ -2,22 +2,61 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 col-md-8 product">
+    <div class="col-xs-2">
+      <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Go Back to Products'.html_safe, products_path, class: 'btn btn-default' %>
+    </div>
+
+    <div class="col-xs-offset-8 col-xs-2">
+      <%= link_to '<i class="fa fa-edit"></i> Edit Product'.html_safe, edit_product_path(@product), class: 'btn btn-default pull-right' %>
+    </div>
+  </div> <!-- end row -->
+
+  <div class="row product-show">
+    <div class="col-sm-12 col-md-8">
       <%= image_tag( @product.image_url , class: "img-responsive", alt: @product.name) %>
     </div>
 
     <div class="col-sm-12 col-md-4">
         <h2><strong><%= @product.name %></strong></h2>
+        <p class="total-rating">
+          <% 5.times do %>
+             <span class="glyphicon glyphicon-star-empty"></span>
+          <% end %>
+        </p>
         <p><%= @product.description %></p>
         <p>Color: <%= @product.colour%></p>
         <% if @product.price %>
         <p><strong>Price: &euro;<%='%.2f' % @product.price%></strong></p>
         <% end %>
 
-        <div class="show-products-links">
-          <%= link_to '<i class="fa fa-edit"></i> Edit'.html_safe, edit_product_path(@product), class: 'btn btn-default' %>
-          <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Go Back to Products'.html_safe, products_path, class: 'btn btn-default' %>
-        </div>
     </div>
   </div> <!-- end row -->
+
+  <div class="row reviews">
+    <div class="cols-xs-12">
+      <h4>Customer Reviews</h4>
+      <hr style="margin-top:0px">
+
+      <div class="user-review">
+        <p><strong>Nick</strong><span class="review-uploaded"> &#8729; a month ago</span></p>
+        <p>
+          <% 5.times do %>
+             <span class="glyphicon glyphicon-star-empty"></span>
+          <% end %>
+        </p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus purus neque, elementum eu metus et, finibus condimentum eros. Suspendisse blandit id magna nec facilisis. Nunc maximus porta elit vitae fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula commodo eros, ac vehicula augue pharetra ac. Sed laoreet rhoncus sapien. Phasellus in purus id massa mollis rhoncus.</p>
+      </div>
+
+      <div class="user-review">
+        <p><strong>Maria</strong><span class="review-uploaded"> &#8729; a year ago</span></p>
+        <p>
+          <% 5.times do %>
+             <span class="glyphicon glyphicon-star-empty"></span>
+          <% end %>
+        </p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus purus neque, elementum eu metus et, finibus condimentum eros. Suspendisse blandit id magna nec facilisis. Nunc maximus porta elit vitae fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula commodo eros, ac vehicula augue pharetra ac. Sed laoreet rhoncus sapien. Phasellus in purus id massa mollis rhoncus.</p>
+      </div>
+    </div>
+  </div> <!-- end row -->
+
 </div> <!-- end container -->
