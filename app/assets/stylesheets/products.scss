@@ -17,7 +17,7 @@
   box-shadow: 0 0 15px #888888;
 }
 
-.product-card img {
+.product-img-index {
   width: 100%;
   height: auto;
 }
@@ -43,19 +43,26 @@
   margin-top: 10px;
 }
 
-.total-rating {
+.average-rating {
   text-align: center;
+}
+
+.border-comments-title {
+  margin-top: 0;
+  height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+.new-review {
+  margin-bottom: 0;
 }
 
 .reviews {
   margin-top: 30px;
 }
 
-.user-review {
-  margin-bottom: 40px;
-}
-
-.review-uploaded {
-  padding-left: 5px;
+.review-dt-uploaded {
+  // padding-left: 5px;
   color: grey;
 }

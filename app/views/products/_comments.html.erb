@@ -1,0 +1,14 @@
+<div class="product-reviews">
+  <% @comments.each do |comment| %>
+    <div class="row">
+      <div class="col-xs-12">
+        <% if comment != @comments.first %>
+          <hr>
+        <% end %>
+        <p><%= comment.user.first_name %> <small class="review-dt-uploaded"><%= "&#8729; #{time_ago_in_words(comment.created_at)} ago".html_safe %></small></p>
+        <div class="rated" data-score="<%= comment.rating %>"></div>
+        <p><%= comment.body %></p>
+      </div>
+    </div><!-- end row -->
+  <% end %>
+</div>
