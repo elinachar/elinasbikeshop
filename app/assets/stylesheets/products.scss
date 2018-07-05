@@ -2,11 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Index
 .btn-new-product {
   margin: 0px 20px 20px 20px;
 }
 
-// Index
 .product-card {
   text-align: center;
   margin-bottom: 20px;
@@ -39,6 +39,10 @@
 
 
 // Show
+.btns-show {
+  margin-top: 20px;
+}
+
 .product-show {
   margin-top: 10px;
 }
@@ -65,4 +69,38 @@
 .review-dt-uploaded {
   // padding-left: 5px;
   color: grey;
+}
+
+.pagination {
+  width: 100%;
+  padding: 15px 0;
+  background-color: #F8F8F8;
+  text-align: center;
+  font-family: normal 76% "Lucida Grande", Verdana, Helvetica, sans-serif;
+  border: solid;
+  border-color: #e7e7e7;
+  border-width: 0.5px;
+  font-size: 14px;
+}
+
+.pagination a {
+  color: black;
+  padding: 0px 4px !important;
+  text-decoration: none;
+}
+
+.pagination .disabled {
+  color: grey;
+}
+
+.pagination em {
+  color: black;
+  font-style: normal;
+  font-weight: 450;
+  background-color: #bebebe;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 15%;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
 }

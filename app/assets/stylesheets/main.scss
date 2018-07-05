@@ -35,6 +35,29 @@ a:-webkit-any-link {
   text-align: center;
 }
 
+#error_explanation {
+  border: solid;
+  border-color: red;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#error_explanation h2 {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  background-color: red; //for browsers not supporting rgba
+  background-color: rgba(255, 0, 0, 0.2);
+  margin: 0;
+  padding: 20px 0;
+  color: black;
+}
+
+.field_with_errors input {
+  border: solid;
+  border-color: red;
+}
+
 .anchor {
   padding-top: 50px;
   min-height: 100%; /* for the sticky footer */
@@ -58,8 +81,6 @@ footer {
   border-top-width: 1px;
   margin-top: 20px;
 }
-
-
 
 // Medium devices (tablets, 768px and up) till Large devices (desktops, 992px and up)
 @media (min-width: 768px) and (max-width: 979px) {
