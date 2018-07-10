@@ -17,3 +17,8 @@ $(document).on('turbolinks:load', function(){
   });
 
 });
+
+$(document).on("turbolinks:before-cache", function() {
+  $('.rating').select2('destroy');
+  $('.rated').select2('destroy');
+})
