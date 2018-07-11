@@ -3,8 +3,11 @@
 
   <%= render 'form', user: @user %>
 
-  <%= link_to 'Go back to my account', @user, class: 'btn btn-default' %>
+
   <% if signed_in? && current_user.admin? %>
+    <%= link_to 'Go back to account', @user, class: 'btn btn-default' %>
     <%= link_to 'Show all users', users_path, class: 'btn btn-default' %>
+  <% else %>
+    <%= link_to 'Go back to my account', @user, class: 'btn btn-default' %>
   <% end %>
 </div>
