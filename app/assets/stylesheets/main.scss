@@ -20,6 +20,19 @@ a:-webkit-any-link {
     text-decoration: none;
 }
 
+.btn-red {
+  color: #a94442;
+  background-color: #f2dede;
+  // border-color: #ebccd1;
+}
+
+.btn-red:hover,
+.btn-red:focus,
+.btn-red:active {
+  color: #a94442 !important;
+  background-color: #f8eeee !important;
+}
+
 .search-btn {
   border-radius: 50%;
 }

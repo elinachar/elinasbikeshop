@@ -1,14 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class="container user-card text-center">
+  <p class="first-name">
+    <strong>First name:</strong>
+    <%= @user.first_name %>
+  </p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+  <p>
+    <strong>Last name:</strong>
+    <%= @user.last_name %>
+  </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <%= link_to 'Edit your account', edit_user_path(@user), class: 'btn btn-default' %>
+  <%= link_to 'Delete your account', @user, method: :delete, data: { confirm: 'Are you sure that you want to delele your account?' }, class: 'btn btn-default btn-red' %>
+  <% if signed_in? && current_user.admin? %>
+    <%= link_to 'Show all users', users_path, class: 'btn btn-default' %>
+  <% end %>
+</div>

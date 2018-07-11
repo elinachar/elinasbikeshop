@@ -5,7 +5,7 @@ class Ability
     user ||= User.new
     can :read, :all
     if user.present?
-      can :manage, User, id: user.id
+      can [:show, :update, :destroy], User, id: user.id
       if user.admin?
         can :manage, :all
       end
