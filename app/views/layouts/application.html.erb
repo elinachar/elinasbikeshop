@@ -43,7 +43,7 @@
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
               <li class="nav-item">
-                <%= link_to('<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Logout'.html_safe, destroy_user_session_path, method: :delete, class: "nav-link") %>
+                <%= link_to('<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Logout '.html_safe + current_user.first_name, destroy_user_session_path, method: :delete, class: "nav-link") %>
               </li>
             <% else %>
               <li class="nav-item">
@@ -81,8 +81,6 @@
         <%= yield %>
       </div>
     </div>
-
-
 
     <!-- footer starts here -->
     <footer>
