@@ -3,7 +3,9 @@ class OrdersController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @orders = Order.includes(:product).all # Optimize query to call once the orders and the products, much faster
+    @orders = Order.includes(:product).where("user_id = ?", current_user.id) # Optimize query to call once the orders and the products, much faster
+
+
   end
 
   def show

@@ -1,3 +1,7 @@
-<h1>My Orders</h1>
+<h1 class="orders-index">My Orders</h1>
 
-<%= render @orders %>
+<% if @orders.count == 0 %>
+  <div class="text-center">Your order's list is empty.</div>
+<% else %>
+  <%= render @orders %>
+<% end %>
