@@ -37,7 +37,6 @@
             <li><%= link_to "About", simple_pages_about_path %></li>
             <li><%= link_to "Contact", simple_pages_contact_path %></li>
             <li><%= link_to "Products", products_path %></li>
-            <li><%= link_to "Orders", orders_path %></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
@@ -48,11 +47,14 @@
                 </a>
                <ul class="dropdown-menu">
                 <li>
-                  <%= link_to('My account', current_user, method: :get, class: "nav-link") %>
+                  <li><%= link_to "My Orders", orders_path %></li>
+                </li>
+                <li>
+                  <%= link_to('My Account', current_user, method: :get, class: "nav-link") %>
                 </li>
                 <% if current_user.admin? %>
                   <li>
-                    <%= link_to('Manage users', users_path, method: :get, class: "nav-link") %>
+                    <%= link_to('Manage Users', users_path, method: :get, class: "nav-link") %>
                   </li>
                 <% end %>
                 <li>
