@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
@@ -39,7 +39,6 @@ gem 'will_paginate', '~> 3.1.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-
 # Gem for functional tests
 gem 'rails-controller-testing'
 
@@ -49,6 +48,10 @@ group :development, :test do
 
   #RSpech for tests (https://github.com/rspec/rspec-rails)
   gem 'rspec-rails', '~> 3.7'
+
+  # FactoryBot for generating test data (https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md)
+  gem 'factory_bot_rails', '~> 4.0'
+
 end
 
 group :development do
@@ -63,9 +66,6 @@ group :development do
 
   gem 'rails-erd'
 
-  #RSpech for tests (https://github.com/rspec/rspec-rails)
-  gem 'rspec-rails', '~> 3.7'
-
 end
 
 group :production do
@@ -75,7 +75,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "rename"
+gem 'rename'
 
 # Gem for user authentication (at bottom of gem file)
 gem 'devise'
