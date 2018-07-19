@@ -52,6 +52,9 @@ group :development, :test do
   # FactoryBot for generating test data (https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md)
   gem 'factory_bot_rails', '~> 4.0'
 
+  # DatabaseCleaner for cleaning test database (https://github.com/DatabaseCleaner/database_cleaner, https://stackoverflow.com/questions/21493970/databasecleaner-rspec-what-is-the-correct-configuration)
+  gem 'database_cleaner'
+
 end
 
 group :development do
