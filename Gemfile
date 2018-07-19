@@ -42,6 +42,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Gem for functional tests
 gem 'rails-controller-testing'
 
+# Gem Stripe for secure online payments
+gem 'stripe'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -1,0 +1,9 @@
+<script
+  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+  data-name="Elina's Bike Shop"
+  data-description=" <%= @product.name %> <%= number_to_currency(@product.price/100.to_f) %>"
+  data-amount="<%= @product.price %>">
+</script>
+
+<!-- data-image="/square-image.png" -->

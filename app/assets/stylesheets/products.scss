@@ -51,6 +51,11 @@
   text-align: center;
 }
 
+.stripe-button-el:active,
+.stripe-button-el:focus {
+  outline: none !important;
+}
+
 .border-comments-title {
   margin-top: 0;
   height: 10px;

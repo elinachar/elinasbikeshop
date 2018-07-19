@@ -20,7 +20,10 @@
         <p><%= @product.description %></p>
         <p>Color: <%= @product.colour%></p>
         <% if @product.price %>
-        <p><strong>Price: &euro;<%='%.2f' % @product.price%></strong></p>
+        <p><strong>Price: <%= number_to_currency(@product.price/100.to_f) %></strong></p>
+        <% end %>
+        <%= form_with(url: '/payments/create') do |form| %>
+          <%= render partial: "shared/stripe_checkout_button" %>
         <% end %>
 
     </div>
