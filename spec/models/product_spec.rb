@@ -2,17 +2,6 @@ require 'rails_helper'
 
 describe Product do
   context "when the product has comments" do
-    # let(:product) { Product.create!( name: "Race Bike" ) }
-    # let(:user) { User.create!(email: "test@mail.com", password: "123456" ) }
-    # before do
-    #   product.comments.create!(rating: 1, user: user, body: "Awful bike!")
-    #   product.comments.create!(rating: 3, user: user, body: "Ok bike!")
-    #   product.comments.create!(rating: 5, user: user, body: "Great bike!")
-    # end
-
-    # @product = FactoryBot.create(:product)
-    # @user = FactoryBot.create(:user)
-    # @comment = FactoryBot.create(:comment, user_id: @user.id, product_id: @product_id)
     before do
       @product_with_comments = FactoryBot.create(:product_with_comments, comments_count: 3)
       @product_with_comments.comments.first.update_attribute(:rating, 1)
