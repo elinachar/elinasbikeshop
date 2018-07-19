@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe SimplePagesController, type: :controller do
+
   context 'GET #landing_page' do
     it 'renders the landing_page template' do
       get :landing_page
@@ -32,6 +33,5 @@ describe SimplePagesController, type: :controller do
       expect(response).to render_template('contact')
     end
   end
-
 
 end

@@ -3,25 +3,32 @@ require 'rails_helper'
 describe User do
   context "create new user validation" do
 
+    attrs = FactoryBot.attributes_for(:user).except(:email)
+
     it "is not valid without an email" do
-      expect(User.new(password: 123456 )).not_to be_valid
+      @user = User.new(attrs)
+      expect(@user).to_not be_valid
     end
 
     it "is not valid without a valid email" do
-      expect(User.new(email: "email@", password: 123456 )).not_to be_valid
+      @user = FactoryBot.build(:user, email: "email@")
+      expect(@user).to_not be_valid
     end
 
 
     it "is not valid without a valid email" do
-      expect(User.new(email: "@email", password: 123456 )).not_to be_valid
+      @user = FactoryBot.build(:user, email: "@email")
+      expect(@user).to_not be_valid
     end
 
     it "is not valid without a password" do
-      expect(User.new(email: "email@email.com")).not_to be_valid
+      @user = User.new(attrs)
+      expect(@user).to_not be_valid
     end
 
     it "is not valid with a short password" do
-      expect(User.new(email: "email@email.com", password: 12345)).not_to be_valid
+      @user = FactoryBot.build(:user, password: "12345")
+      expect(@user).to_not be_valid
     end
 
   end

@@ -1,15 +1,16 @@
 require 'rails_helper'
 
 describe UsersController, type: :controller do
-
-  @user = FactoryBot.create(:user)
-  @admin = FactoryBot.create(:admin)
+  
+  before do
+    @user = FactoryBot.create(:user)
+    @admin = FactoryBot.create(:admin)
+  end
 
   ########################### INDEX ###########################
   describe "GET #index" do
     context "when user is logged in" do
-
-      context "when simple_user is logged in" do
+      context "when user is logged in" do
         before do
           sign_in @user
         end
@@ -41,15 +42,12 @@ describe UsersController, type: :controller do
         expect(response).to redirect_to(new_user_session_path)
       end
     end
-
   end
 
   ########################### SHOW ###########################
   describe "GET #show" do
-
     context "when user is logged in" do
-
-      context "when simple_user is logged in" do
+      context "when user is logged in" do
         before do
           sign_in @user
         end
@@ -73,14 +71,13 @@ describe UsersController, type: :controller do
           sign_in @admin
         end
 
-        it "can access /simple_user.id/show" do
+        it "can access /user.id/show" do
           get :show, params: {id: @user.id}
           expect(assigns(:user)).to eq @user
           expect(response).to be_ok
           expect(response).to render_template('show')
         end
       end
-
     end
 
     context "when user is not logged in" do
@@ -89,15 +86,12 @@ describe UsersController, type: :controller do
         expect(response).to redirect_to(new_user_session_path)
       end
     end
-
   end
 
   ########################### EDIT ###########################
   describe "GET #edit" do
-
     context "when user is logged in" do
-
-      context "when simple_user is logged in" do
+      context "when user is logged in" do
         before do
           sign_in @user
         end
@@ -121,14 +115,13 @@ describe UsersController, type: :controller do
           sign_in @admin
         end
 
-        it "can access /simple_user.id/edit" do
+        it "can access /user.id/edit" do
           get :edit, params: {id: @user.id}
           expect(assigns(:user)).to eq @user
           expect(response).to be_ok
           expect(response).to render_template('edit')
         end
       end
-
     end
 
     context "when user is not logged in" do
@@ -137,15 +130,12 @@ describe UsersController, type: :controller do
         expect(response).to redirect_to(new_user_session_path)
       end
     end
-
   end
 
   ########################### DELETE ###########################
   describe "DELETE #destroy" do
-
     context "when user is logged in" do
-
-      context "when simple_user is logged in" do
+      context "when user is logged in" do
         before do
           sign_in @user
         end
@@ -169,7 +159,7 @@ describe UsersController, type: :controller do
           sign_in @admin
         end
 
-        it "can access /simple_user.id" do
+        it "can access /user.id" do
           delete :destroy, params: {id: @user.id}
           expect(assigns(:user)).to eq @user
           expect(response).to have_http_status(302)
@@ -184,7 +174,6 @@ describe UsersController, type: :controller do
         expect(response).to redirect_to(new_user_session_path)
       end
     end
-
   end
 
 end
