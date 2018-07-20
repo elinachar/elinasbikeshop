@@ -1,0 +1,7 @@
+<div class="container create-payment">
+  <h4 class="text-center">Thank you for your order!</h4>
+  <p>Thank you for purchasing at Elina's Bike Shop. You will receive a confirmation e-mail shortly.</p>
+  <p>You can check out the details of your order:</p>
+  <%= render partial: 'orders/order_details', locals: { order: @order } %>
+  <%= link_to 'Check out all your orders'.html_safe, orders_path, class: 'btn btn-default' %>
+</div>

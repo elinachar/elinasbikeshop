@@ -22,8 +22,9 @@
         <% if @product.price %>
         <p><strong>Price: <%= number_to_currency(@product.price/100.to_f) %></strong></p>
         <% end %>
-        <%= form_with(url: '/payments/create') do |form| %>
+        <%= form_with(url: "/payments/create", class: "stripe-form") do |form| %>
           <%= render partial: "shared/stripe_checkout_button" %>
+          <%= hidden_field_tag(:product_id, @product.id) %>
         <% end %>
 
     </div>

@@ -1,0 +1,42 @@
+<table id="order-submited-successfully", style="text-align: center; width: 100%;">
+    <tr>
+      <td> <%= image_tag( "elinas_bike_shop_logo.png" , class:"img-responsive", alt: "elina's bike shop logo") %></td>
+    </tr>
+    <tr>
+      <td><h2>Thank you! Your order has been successfully submited.</h2></td>
+    </tr>
+    <tr>
+      <td><p>Your order will be delivered within 10 days.</p></td>
+    </tr>
+    <tr>
+      <td><p>Order number: <strong><%= @order.id %></strong></p></td>
+    </tr>
+</table>
+
+<table id="order-submited-product-info"  style="border: solid; border-color: #F8F8F8; border-width: 1px;">
+  <tr style="background-color: #F8F8F8; text-align: left">
+    <th colspan="2" style="padding-top: 10px; padding-bottom: 10px; padding-left: 20px;">Product</th>
+    <th style="padding-top: 10px; padding-bottom: 10px; padding-left: 20px; ">Price</th>
+  </tr>
+  <tr>
+    <td style="width: 20%"><%=image_tag( @order.product.image_url , class:"img-responsive", style: "width:100%", alt: @order.product.description) %></td>
+    <td style="border-right: solid; border-color: #F8F8F8; border-width: 0.5px; padding-left: 10%;">
+      <p><strong>Order ID: </strong><%= @order.id %></p>
+      <p><strong>Product Name: </strong><%= @order.product.name %></p>
+      <p><strong>Product Color: </strong><%= @order.product.colour %></p>
+    </td>
+    <td style="width: 30%; padding-left: 20px;"><p><%= @order.product.price %></p></td>
+  </tr>
+</table>
+
+<table>
+    <tr>
+      <td>
+        <p><strong>This email is created automatically. Please do not respond to this email.</strong></p>
+        <p>If you need any help, please send to <%= mail_to "elinachar@gmail.com", "elina@elinasbikeshop.com" %>.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><p>Your Elina's Bike Shop team!</p></td>
+    </tr>
+</table>

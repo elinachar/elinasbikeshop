@@ -8,7 +8,7 @@
         <div class="row">
           <p class="col-md-12"><strong>Order No.: </strong><%= order.id %></p>
           <p class="col-xs-12 col-md-6"><strong>Item: </strong><%= order.product.name %></p>
-          <p class="col-xs-12 col-md-6"><strong>Total: <%= number_to_currency(order.total.to_f, :unit=>'€ ') %></strong></p>
+          <p class="col-xs-12 col-md-6"><strong>Total: <%= number_to_currency(order.total/100.to_f) %></strong></p>
         </div> <!-- end row -->
       </div>
     </div> <!-- end row -->

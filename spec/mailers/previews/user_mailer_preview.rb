@@ -7,4 +7,8 @@ class UserMailerPreview < ActionMailer::Preview
   def welcome
     UserMailer.welcome(User.first)
   end
+
+  def order_submited
+    UserMailer.order_submited(Order.first)
+  end
 end

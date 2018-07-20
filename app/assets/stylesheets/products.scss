@@ -51,9 +51,9 @@
   text-align: center;
 }
 
-.stripe-button-el:active,
-.stripe-button-el:focus {
-  outline: none !important;
+.stripe-form button:active,
+.stripe-form button:focus {
+  outline: none;
 }
 
 .border-comments-title {
