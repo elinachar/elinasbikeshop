@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>ElinasBikeShop</title>
+
+    <%= favicon_link_tag asset_path('elinas_bike_shop_logo_60x60.png'), :rel => 'icon', :type =>  'image/png' %>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +32,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to "Elina's Bike Shop", root_path, { :class=>"navbar-brand navbar-left" }  %>
+          <%= link_to "#{image_tag("elinas_bike_shop_logo_transparent_120x70.png", alt: "elinas bike shop logo", class: "navbar-logo")}".html_safe, root_path, { :class=>"navbar-brand navbar-left" } %>
+          <!-- <%= link_to "Elina's Bike Shop", root_path, { :class=>"navbar-brand navbar-left" }  %> -->
         </div> <!-- end navbar-header -->
 
         <div class="collapse navbar-collapse">
@@ -71,7 +75,7 @@
 
           <%= form_with(url: products_path, method: 'get', local: true, class: 'navbar-form navbar-right') do |form| %>
             <%= form.text_field :q, id: 'q', value: params[:q], placeholder: "Search", class: 'form-control' %>
-            <%= button_tag(class: 'btn btn-default search-btn') do %>
+            <%= button_tag(class: 'search-btn') do %>
               <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
             <% end %>
           <% end %>
@@ -87,7 +91,7 @@
       <!-- flash messages -->
       <div class="container">
         <% if notice %>
-          <p id="notice" class="alert alert-info", role="alert"><%= notice %></p>
+          <p id="notice" class="alert alert-success", role="alert"><%= notice %></p>
         <% end %>
         <% if alert %>
           <p id="alert" class="alert alert-danger", role="alert"><%= alert %></p>

@@ -6,11 +6,17 @@ body {
 
 html, body {
   height: 100%; /* for the sticky footer */
+  font-family: "Myriad Pro", "Georgia";
+  font-size: 15px;
 }
 
 h1, h2, .navbar-left {
-  font-family: "Comic Sans MS", "Georgia";
+  font-weight: 300;
   text-align: center;
+}
+
+p {
+  // font-size: 16px;
 }
 
 /* apply text-decoration:none to all links of the app (it does not work when applied on other styles) */
@@ -32,8 +38,23 @@ a:-webkit-any-link {
   background-color: #f8eeee !important;
 }
 
+.navbar-logo {
+  width: 40px;
+}
+
+.navbar-collapse ul li a {
+  padding-top: 18px;
+}
+
 .search-btn {
-  border-radius: 50%;
+  background-color: var(--off-white);
+  color: #777;
+  font-size: 18px;
+  border-style: none;
+}
+
+.search-btn .glyphicon {
+  padding-top: 2px;
 }
 
 .search-btn:focus,

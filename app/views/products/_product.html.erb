@@ -1,6 +1,7 @@
 <% if product.name and product.image_url %>
   <div class="col-xs-12 col-sm-6 col-md-4">
     <%= link_to product, :action => 'go' do %>
+      <%# logger.debug "Product: #{product.name}"%>
       <div class="product-card">
         <%= image_tag( product.image_url , class: "img-responsive", alt: product.name) %>
         <div class="product-info-index">

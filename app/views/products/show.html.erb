@@ -15,14 +15,14 @@
     </div>
 
     <div class="col-sm-12 col-md-4">
-        <h2><strong><%= @product.name %></strong></h2>
+        <h2><%= @product.name %></h2>
         <p class="rated average-rating" data-score="<%= @product.average_rating %>"></p>
         <p><%= @product.description %></p>
         <p>Color: <%= @product.colour%></p>
         <% if @product.price %>
         <p><strong>Price: <%= number_to_currency(@product.price/100.to_f) %></strong></p>
         <% end %>
-        <%= form_with(url: "/payments/create", class: "stripe-form") do |form| %>
+        <%= form_with(url: "/payments/create", method: "POST", class: "stripe-form") do |form| %>
           <%= render partial: "shared/stripe_checkout_button" %>
           <%= hidden_field_tag(:product_id, @product.id) %>
         <% end %>
