@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function(){
+  // Turbolinks.clearCache()
   $(".rating").raty({
     starHalf: '<%= asset_path "star-half.png" %>',
     starOff: '<%= asset_path "star-off.png" %>',
@@ -18,7 +19,6 @@ $(document).on('turbolinks:load', function(){
 
 });
 
-$(document).on("turbolinks:before-cache", function() {
-  $('.rating').select2('destroy');
-  $('.rated').select2('destroy');
+$(document).on("turbolinks:before-render", function() {
+  Turbolinks.clearCache()
 })
