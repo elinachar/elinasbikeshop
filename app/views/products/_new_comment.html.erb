@@ -1,6 +1,9 @@
 <% if signed_in? %>
+  <div class="row new-comment-thank-you">
+    <p class="col-xs-12 text-center">Thank you for your review!</p>
+  </div>
   <div class="row">
-    <%= form_with(model: [@product, @product.comments.build], local: true) do |f| %>
+    <%= form_with(model: [@product, @product.comments.build], remote: true, id: "new_comment") do |f| %>
       <div class="col-xs-12">
         <h4 class="new-review">Add a review</h4>
       </div>

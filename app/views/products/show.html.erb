@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row btns-show">
     <div class="col-xs-2">
-      <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Go Back to Products'.html_safe, products_path, class: 'btn btn-default' %>
+      <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Go Back to Products'.html_safe, products_path, class: "btn btn-default" %>
     </div>
 
     <div class="col-xs-offset-8 col-xs-2">
-      <%= link_to '<i class="fa fa-edit"></i> Edit Product'.html_safe, edit_product_path(@product), class: 'btn btn-default pull-right' %>
+      <%= link_to '<i class="fa fa-edit"></i> Edit Product'.html_safe, edit_product_path(@product), class: "btn btn-default pull-right" %>
     </div>
   </div> <!-- end row -->
 
@@ -30,14 +30,18 @@
     </div>
   </div> <!-- end row -->
 
-  <div class="row reviews">
-    <div class="col-xs-12">
-      <h4>Customer Reviews</h4>
-      <hr class="border-comments-title">
-
-      <%= render "new_comment" %>
-      <%= render "comments" %>
+  <div class="reviews">
+    <div class="row">
+      <%=  button_tag "Leave a new review", class: "btn btn-default col-sm-offset-5 col-md-offset-7 col-md-2 col-md-push-3", id: "create-new-comment-btn" %>
+      <h4 class="col-md-3 col-md-pull-9">Customer Reviews</h4>
     </div>
-  </div> <!-- end row -->
+
+    <div class="row">
+      <hr class="border-comments-title">
+    </div>
+
+    <%= render "new_comment" %>
+    <%= render "comments" %>
+  </div> <!-- end reviews -->
 
 </div> <!-- end container -->

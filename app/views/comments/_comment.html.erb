@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-xs-12">
+    <% logger.debug "Comments: #{@comments}"%>
+    <% if (@comments && comment != @comments.first) || @comments.nil? %>
+      <hr> <!-- for first comments on each page and when appending new comment with ajax -->
+    <% end %>
+    <p>
+      <%= comment.user.first_name %> <small class="review-dt-uploaded"><%= "&#8729; #{time_ago_in_words(comment.created_at)} ago".html_safe %></small>
+      <% if signed_in? && current_user.admin? %>
+        <%= link_to ('<span class="glyphicon glyphicon-remove" style="color:#b20000"></span>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </p>
+    <div class="rated" data-score="<%= comment.rating %>"></div>
+    <p><%= comment.body %></p>
+    <% if @comments.nil? %>
+      <hr> <!-- for appending new comment with ajax -->
+    <% end %>
+  </div>
+</div><!-- end row -->

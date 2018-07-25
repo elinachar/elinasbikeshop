@@ -1,0 +1,11 @@
+// Hide submition box and show thank you message
+$("#new_comment").hide();
+$(".new-comment-thank-you").show();
+$("#create-new-comment-btn").css('visibility', 'visible');
+
+// Append new comment on top of all comments
+$(".product-reviews").prepend("<%= j render @comment %>");
+
+// Update average rating of product and refresh Raty rating system
+$(".average-rating").attr("data-score", "<%= @product.average_rating %>");
+refreshRating();

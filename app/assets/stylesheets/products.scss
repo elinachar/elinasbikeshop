@@ -55,6 +55,22 @@
   outline: none;
 }
 
+
+#create-new-comment-btn {
+  visibility: hidden;
+}
+
+.new-comment-thank-you {
+  display: none;
+  background-color: #F8F8F8;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.new-comment-thank-you p {
+  margin: 0;
+}
+
 .border-comments-title {
   margin-top: 0;
   height: 10px;

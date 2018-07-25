@@ -6,7 +6,7 @@
         <%= image_tag( product.image_url , class: "img-responsive", alt: product.name) %>
         <div class="product-info-index">
           <p><%= product.name %></p>
-          <p class="rated" data-score="<%= product.average_rating %>"></p>
+          <p class="rated average-rating" data-score="<%= product.average_rating %>"></p>
           <% if product.price %>
             <p><strong><%= number_to_currency(product.price/100.to_f) %></strong></p>
           <% end %>
