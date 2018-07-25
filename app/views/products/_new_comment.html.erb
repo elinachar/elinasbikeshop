@@ -11,7 +11,7 @@
       <div class="col-xs-12">
         <div class="form-group">
           <%= f.label :body, "Comments", class: "sr-only" %><br>
-          <%= f.text_area :body, placeholder: "Your comments on the product...", class: 'form-control', size: '5x10'  %>
+          <%= f.text_area :body, placeholder: "Your comments on the product...", class: 'form-control new-comment-text', size: '5x10'  %>
         </div>
 
         <div class="form-group">
@@ -21,7 +21,6 @@
         <div class="actions">
           <%= f.submit "Submit", class: "btn btn-default" %>
         </div>
-        <hr>
       </div>
     <% end %>
   </div><!-- end row -->

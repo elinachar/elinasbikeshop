@@ -1,7 +1,7 @@
 // Hide submition box and show thank you message
 $("#new_comment").hide();
 $(".new-comment-thank-you").show();
-$("#create-new-comment-btn").css('visibility', 'visible');
+$("#create-new-comment-btn").css('visibility', 'visible').prop("disabled", false);
 
 // Append new comment on top of all comments
 $(".product-reviews").prepend("<%= j render @comment %>");
