@@ -9,30 +9,31 @@
     </div>
   </div> <!-- end row -->
 
-  <div class="row product-show">
-    <div class="col-sm-12 col-md-8">
-      <%= image_tag( @product.image_url , class: "img-responsive product-img-index img-zoom", alt: @product.name, data_zoom_image: @product.image_url) %>
-    </div>
+  <% cache @product do %>
+    <div class="row product-show">
+      <div class="col-sm-12 col-md-8">
+        <%= image_tag( @product.image_url , class: "img-responsive product-img-index img-zoom", alt: @product.name, data_zoom_image: @product.image_url) %>
+      </div>
 
-    <div class="col-sm-12 col-md-4">
-        <h2><%= @product.name %></h2>
-        <p class="rated average-rating" data-score="<%= @product.average_rating %>"></p>
-        <p><%= @product.description %></p>
-        <p>Color: <%= @product.colour%></p>
-        <% if @product.price %>
-        <p><strong>Price: <%= number_to_currency(@product.price/100.to_f) %></strong></p>
-        <% end %>
-        <%= form_with(url: "/payments/create", method: "POST", class: "stripe-form") do |form| %>
-          <%= render partial: "shared/stripe_checkout_button" %>
-          <%= hidden_field_tag(:product_id, @product.id) %>
-        <% end %>
-
-    </div>
-  </div> <!-- end row -->
+      <div class="col-sm-12 col-md-4">
+          <h2><%= @product.name %></h2>
+          <p class="rated average-rating" data-score="<%= @product.average_rating %>"></p>
+          <p><%= @product.description %></p>
+          <p>Color: <%= @product.colour%></p>
+          <% if @product.price %>
+          <p><strong>Price: <%= number_to_currency(@product.price/100.to_f) %></strong></p>
+          <% end %>
+          <%= form_with(url: "/payments/create", method: "POST", class: "stripe-form") do |form| %>
+            <%= render partial: "shared/stripe_checkout_button" %>
+            <%= hidden_field_tag(:product_id, @product.id) %>
+          <% end %>
+      </div>
+    </div> <!-- end row -->
+  <% end %>
 
   <div class="reviews">
     <div class="row">
-      <%=  button_tag "Leave a new review", class: "btn btn-default col-sm-offset-5 col-md-offset-7 col-md-2 col-md-push-3", id: "create-new-comment-btn" %>
+      <%=  button_tag "Leave a new review", class: "btn btn-default col-xs-offset-5 col-md-offset-7 col-md-2 col-md-push-3", id: "create-new-comment-btn" %>
       <h4 class="col-md-3 col-md-pull-9">Customer Reviews</h4>
     </div>
 
