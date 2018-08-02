@@ -104,4 +104,8 @@ Rails.application.configure do
   # Dynamic links generate right URLs in emails (after installing devise gem)
   config.action_mailer.default_url_options = { host: 'elinasbikeshop.herokuapp.com' }
 
+  # Enable ActionCable requests on Heroku Server
+  config.web_socket_server_url = "wss://elinasbikeshop.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://elinasbikeshop.herokuapp.com', 'http://elinasbikeshop.herokuapp.com']
+
 end

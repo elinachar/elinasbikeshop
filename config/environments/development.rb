@@ -62,5 +62,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.log_level = :debug
+  # Deactivate default CoffeeScript generation, when $rails g.. runs.
+  # Create files only in JS 
+  config.app_generators.javascript_engine = :javascript
 end
