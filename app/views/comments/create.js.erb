@@ -3,9 +3,14 @@ $("#new_comment").hide();
 $(".new-comment-thank-you").show();
 $("#create-new-comment-btn").css('visibility', 'visible').prop("disabled", false);
 
+
+// Following transfered to assets/javascripts/channels/product.js
+
 // Append new comment on top of all comments
-$(".product-reviews").prepend("<%= j render @comment %>");
+// $(".product-reviews").prepend("<%= j render @comment %>");
 
 // Update average rating of product and refresh Raty rating system
-$(".average-rating").attr("data-score", "<%= @product.average_rating %>");
-refreshRating();
+// $(".average-rating").attr("data-score", "<%= @product.average_rating %>");
+// refreshRating();
+
+// $(".number-of-reviews").html("<%= pluralize(@product.comments.size, 'Review') %>");

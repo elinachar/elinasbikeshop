@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row btns-show">
+  <div class="row btns-show" data-product-id="<%= @product.id %>">
     <div class="col-xs-2">
       <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Go Back to Products'.html_safe, products_path, class: "btn btn-default" %>
     </div>
@@ -34,7 +34,10 @@
   <div class="reviews">
     <div class="row">
       <%=  button_tag "Leave a new review", class: "btn btn-default col-xs-offset-5 col-md-offset-7 col-md-2 col-md-push-3", id: "create-new-comment-btn" %>
-      <h4 class="col-md-3 col-md-pull-9"><%= pluralize(@product.cached_comments_count, "Review") %></h4>
+      <h4 class="col-md-3 col-md-pull-9">
+        <span class="number-of-reviews"><%= @product.cached_comments.size %></span>
+        <span class="review-text"><%= "Review".pluralize(@product.comments.size) %></span>
+      </h4>
     </div>
 
     <div class="row">
