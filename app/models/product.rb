@@ -23,4 +23,12 @@ class Product < ApplicationRecord
     def average_rating
       comments.average(:rating).to_f
     end
+
+    def cached_comments_count
+      Rails.cache.fetch([self, "comments_count"]) {comments.size}
+    end
+
+    def cached_comments
+      Rails.cache.fetch([self, "comments"]) {comments}
+    end
 end

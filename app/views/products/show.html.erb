@@ -34,7 +34,7 @@
   <div class="reviews">
     <div class="row">
       <%=  button_tag "Leave a new review", class: "btn btn-default col-xs-offset-5 col-md-offset-7 col-md-2 col-md-push-3", id: "create-new-comment-btn" %>
-      <h4 class="col-md-3 col-md-pull-9">Customer Reviews</h4>
+      <h4 class="col-md-3 col-md-pull-9"><%= pluralize(@product.cached_comments_count, "Review") %></h4>
     </div>
 
     <div class="row">
