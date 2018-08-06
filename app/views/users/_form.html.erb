@@ -13,14 +13,18 @@
 
   </br>
   <div class="field">
-    <%= form.label :first_name %>
+    <%= form.label :first_name %><br />
     <%= form.text_field :first_name %>
   </div></br>
 
   <div class="field">
-    <%= form.label :last_name %>
+    <%= form.label :last_name %><br />
     <%= form.text_field :last_name %>
   </div></br>
+
+  <% if current_page?(new_user_path) %>
+    <%= render 'new_form', form: form %>
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>

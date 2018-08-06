@@ -60,8 +60,13 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
+      if current_user.admin?
+        format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to root_path, notice: 'Sorry to say goodbye.. You have successfully deleted your account in Elinas Bike Shop. We hope to see you again soon!' }
+        format.json { head :no_content }
+      end
     end
   end
 
@@ -73,7 +78,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name)
+      params.require(:user).permit(:first_name, :last_name, :email, :password)
     end
 
 end

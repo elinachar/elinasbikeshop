@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Product do
   context "when the product has comments" do
@@ -27,6 +27,30 @@ describe Product do
 
     it "is not valid without a name" do
       attrs = FactoryBot.attributes_for(:product).except(:name)
+      product = Product.new(attrs)
+      expect(product).to_not be_valid
+    end
+
+    it "is not valid without a description" do
+      attrs = FactoryBot.attributes_for(:product).except(:description)
+      product = Product.new(attrs)
+      expect(product).to_not be_valid
+    end
+
+    it "is not valid without an image_url" do
+      attrs = FactoryBot.attributes_for(:product).except(:image_url)
+      product = Product.new(attrs)
+      expect(product).to_not be_valid
+    end
+
+    it "is not valid without a colour" do
+      attrs = FactoryBot.attributes_for(:product).except(:colour)
+      product = Product.new(attrs)
+      expect(product).to_not be_valid
+    end
+
+    it "is not valid without a price" do
+      attrs = FactoryBot.attributes_for(:product).except(:price)
       product = Product.new(attrs)
       expect(product).to_not be_valid
     end

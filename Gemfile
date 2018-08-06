@@ -64,8 +64,8 @@ group :development, :test do
   # DatabaseCleaner for cleaning test database (https://github.com/DatabaseCleaner/database_cleaner, https://stackoverflow.com/questions/21493970/databasecleaner-rspec-what-is-the-correct-configuration)
   gem 'database_cleaner'
 
-  # Gem MiniProfiler: allows you to see the speed of a request conveniently on the page
-  gem 'rack-mini-profiler'
+  # Gem for testing user inputs
+  gem "capybara"
 
 end
 
@@ -80,6 +80,9 @@ group :development do
   gem 'sqlite3'
 
   gem 'rails-erd'
+
+  # Gem MiniProfiler: allows you to see the speed of a request conveniently on the page
+  gem 'rack-mini-profiler'
 
 
 end
