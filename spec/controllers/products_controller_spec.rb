@@ -126,7 +126,6 @@ describe ProductsController, type: :controller do
     end
   end
 
-
   ############################ POST ############################
   ########################### CREATE ###########################
   describe "POST #create" do

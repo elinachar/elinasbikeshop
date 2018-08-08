@@ -7,6 +7,7 @@ class Ability
       can [:show, :update, :destroy], User, id: user.id
       can [:index, :show], Product
       can [:index, :show], Order, user_id: user.id
+      can :create, Comment
       if user.admin?
         can :manage, :all
       end

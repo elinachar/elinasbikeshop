@@ -67,6 +67,9 @@ group :development, :test do
   # Gem for testing user inputs
   gem "capybara"
 
+  # Gem for testing stripe
+  gem 'stripe-ruby-mock', '~> 2.5.0', :require => 'stripe_mock'
+
 end
 
 group :development do

@@ -26,6 +26,9 @@
           <%= form_with(url: "/payments/create", method: "POST", class: "stripe-form") do |form| %>
             <%= render partial: "shared/stripe_checkout_button" %>
             <%= hidden_field_tag(:product_id, @product.id) %>
+            <% if current_user %>
+              <%= hidden_field_tag(:user, current_user) %>
+            <% end %>
           <% end %>
       </div>
     </div> <!-- end row -->

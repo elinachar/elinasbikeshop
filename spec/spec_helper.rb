@@ -44,6 +44,17 @@ RSpec.configure do |config|
   # triggering implicit auto-inclusion in groups with matching metadata.
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
+  # For testing Stripe: Which will start the mock server and make a handful of
+  # helper methods(such as creating a plan or user in Stripe)
+  config.before(:each) do
+    @stripe_test_helper = StripeMock.create_test_helper
+    StripeMock.start
+  end
+
+  config.after(:each) do
+    StripeMock.stop
+  end
+
   # Delete test database before each test (https://stackoverflow.com/questions/21493970/databasecleaner-rspec-what-is-the-correct-configuration)
   # config.before(:suite) do
   #   DatabaseCleaner.strategy = :transaction
