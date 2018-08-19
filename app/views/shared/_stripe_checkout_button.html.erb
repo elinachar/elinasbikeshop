@@ -4,5 +4,5 @@
   data-image="<%= asset_path("elinas_bike_shop_logo.png") %>"
   data-name="Elina's Bike Shop"
   data-description=" <%= @product.name %> <%= number_to_currency(@product.price/100.to_f) %>"
-  data-amount="<%= @product.price %>">
+  data-amount="<%= @product.price*100 %>">
 </script>

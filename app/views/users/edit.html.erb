@@ -3,6 +3,7 @@
 
   <%= render 'form', user: @user %>
 
+  <%= link_to "Change your password", edit_user_registration_path, class: "btn btn-default" %>
 
   <% if signed_in? && current_user.admin? %>
     <%= link_to 'Go back to account', @user, class: 'btn btn-default' %>

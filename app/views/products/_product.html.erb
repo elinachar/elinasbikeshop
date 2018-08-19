@@ -9,13 +9,15 @@
             <p><%= product.name %></p>
             <p class="rated average-rating" data-score="<%= product.average_rating %>"></p>
             <% if product.price %>
-              <p><strong><%= number_to_currency(product.price/100.to_f) %></strong></p>
+              <p><strong><%= number_to_currency(product.price.to_f) %></strong></p>
             <% end %>
           </div> <!-- end product-info-index -->
-          <div class ="product-links-index">
-            <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_product_path(product) %>
-            <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, product, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div> <!-- end product-links-index -->
+          <% if current_user && current_user.admin? %>
+            <div class ="product-links-index">
+              <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_product_path(product) %>
+              <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, product, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div> <!-- end product-links-index -->
+          <% end %>
         </div> <!-- end product-card -->
       <% end %>
     <% end %>

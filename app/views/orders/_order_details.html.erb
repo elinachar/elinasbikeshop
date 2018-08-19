@@ -1,6 +1,6 @@
 <hr>
 <p><strong>Order ID: </strong><%= @order.id %></p>
 <p><strong>Product Name: </strong><%= @order.product.name %></p>
-<p><strong>Product Price: </strong><%= number_to_currency(@order.total/100.to_f) %></p>
-<p><strong>Total Price: </strong><%= number_to_currency(@order.total/100.to_f) %></p>
+<p><strong>Product Price: </strong><%= number_to_currency(@order.total.to_f) %></p>
+<p><strong>Total Price: </strong><%= number_to_currency(@order.total.to_f) %></p>
 <hr>

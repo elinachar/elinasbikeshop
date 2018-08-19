@@ -15,7 +15,7 @@ class UserMailer < ApplicationMailer
           subject: "Welcome to #{@appname}!")
   end
 
-  def order_submited(order)
+  def order_created(order)
     @appname = "Elina's Bike Shop"
     @order = order
     @user = order.user
